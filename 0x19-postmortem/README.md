@@ -4,22 +4,21 @@
 From May 19 12:30 p.m to May 21 9:30 p.m Requests to the website responded with an ERROR 500, this affected 35% of users since the requests corresponded to a query module. The users could not access to the web page and the services associated because the apache server was down. The suspension was due to an incorrect file name in the last update.
 
 ## Timeline (Eastern Standard Time)
-May 19
+- May 19
 * 12:30 p.m : Code push to server
 * 1:30 p.m : Deploy code 
 * 1:45 p.m : Outage begins
 * 1:50 p.m : Masive Customers complaints 
 * 2:00 p.m : Customer services create a ticket
 * 2:10 p.m : The support engineer receive the ticket and start to attend the issue
-May 19
 * 8:00 a.m: Check http requests. Why a 500 error?
 * 10:00 a.m : Check the apache server configuration files line by line. sites-available, /etc/apache2/, /var/www/html/.
-May 20
+- May 20
 * 8:00 a.m: Check the logs associated (error logs, access logs) 
 * 10:00 a.m: Use the ps aux comand to detect what process are associated to the apache server. apache2.
 * 10:30 a.m: Use the strace command to the root apache server process with null result for every line. -root
 * 11:00 a.m: Use the strace command to the data apache server process with a long list of return -1 errors. www-data
-May 21
+- May 21
 * 8:00 a.m: Read the result of the strace command verifying line by line the associated services and possible errors
 * 11:00 am: Found error on deploy. The file /var/www/html/wp-includes/class-wp-locale.phpp was a typo error 
 * 11:25 am: Run script to fix it
