@@ -13,15 +13,21 @@ From May 19 12:30 p.m to May 21 9:30 p.m Requests to the website responded with 
 * 2:10 p.m : The support engineer receive the ticket and start to attend the issue
 * 2:30 a.m: Check http requests. Why a 500 error?
 * 3:00 a.m : Check the apache server configuration files line by line. sites-available, /etc/apache2/, /var/www/html/.
+![](https://github.com/elisa2105/holberton-system_engineering-devops/blob/master/0x19-postmortem/images/sites%20available.PNG?raw=true)
+![](https://github.com/elisa2105/holberton-system_engineering-devops/blob/master/0x19-postmortem/images/document%20root.PNG?raw=true)
 - May 20
 * 8:00 a.m: Check the logs associated (error logs, access logs) 
 * 10:00 a.m: Use the ps aux comand to detect what process are associated to the apache server. apache2.
+![](https://github.com/elisa2105/holberton-system_engineering-devops/blob/master/0x19-postmortem/images/psaux.PNG?raw=true)
 * 10:30 a.m: Use the strace command to the root apache server process with null result for every line. -root
+![](https://github.com/elisa2105/holberton-system_engineering-devops/blob/master/0x19-postmortem/images/strace%20127.PNG?raw=true)
 * 11:00 a.m: Use the strace command to the data apache server process with a long list of return -1 errors. www-data
+[Links](https://github.com/elisa2105/holberton-system_engineering-devops/blob/master/0x19-postmortem/images/strace%20161.txt)
 - May 21
 * 8:00 a.m: Read the result of the strace command verifying line by line the associated services and possible errors
 * 11:00 am: Found error on deploy. The file /var/www/html/wp-includes/class-wp-locale.phpp was a typo error 
 * 11:25 am: Run script to fix it
+[Links](https://github.com/elisa2105/holberton-system_engineering-devops/blob/master/0x17-web_stack_debugging_3/0-strace_is_your_friend.pp)
 * 12:00 am: Error fixed and requests responded 200
 
 ### Root Cause and Resolution 
