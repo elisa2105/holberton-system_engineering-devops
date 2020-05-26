@@ -11,8 +11,8 @@ From May 19 12:30 p.m to May 21 9:30 p.m Requests to the website responded with 
 * 1:50 p.m : Masive Customers complaints 
 * 2:00 p.m : Customer services create a ticket
 * 2:10 p.m : The support engineer receive the ticket and start to attend the issue
-* 8:00 a.m: Check http requests. Why a 500 error?
-* 10:00 a.m : Check the apache server configuration files line by line. sites-available, /etc/apache2/, /var/www/html/.
+* 2:30 a.m: Check http requests. Why a 500 error?
+* 3:00 a.m : Check the apache server configuration files line by line. sites-available, /etc/apache2/, /var/www/html/.
 - May 20
 * 8:00 a.m: Check the logs associated (error logs, access logs) 
 * 10:00 a.m: Use the ps aux comand to detect what process are associated to the apache server. apache2.
