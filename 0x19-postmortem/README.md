@@ -29,11 +29,13 @@ From May 19 12:30 p.m to May 21 9:30 p.m Requests to the website responded with 
 * 11:25 am: Run script to fix it
 [Links](https://github.com/elisa2105/holberton-system_engineering-devops/blob/master/0x17-web_stack_debugging_3/0-strace_is_your_friend.pp)
 * 12:00 am: Error fixed and requests responded 200
+![](https://github.com/elisa2105/holberton-system_engineering-devops/blob/master/0x19-postmortem/images/working.PNG?raw=true)
 
 ### Root Cause and Resolution 
 The root of the problem was due to an incorrect file name in the last update of the site, specifically in the extension of the updated php module.
 
 Initially it was verified that the files were in the appropriate apache path “sites / available”, with the `ps aux` command the processes associated with apache were verified, then with the `strace` command the returns were checked the file was identified, a script was generated to correct the problem, it was validated with the `curl` command and access from the browser.
+![](https://github.com/elisa2105/holberton-system_engineering-devops/blob/master/0x19-postmortem/images/accessing.PNG?raw=true)
 
 ### Corrective and Preventative Measures
 In light of the incident in the last two days, an evaluation and review of the update process carried out was made, it was determined that stages were omitted for the release of this module to production, to prevent future incidents, the following improvements were implemented:
