@@ -6,7 +6,7 @@ server {
     index index.html index.htm index.nginx-debian.html;
     
     server_name 104.196.193.253;
-    add_header X-Served-By $HOSTNAME;
+    add_header X-Served-By 1205-web-01;
 
     location /airbnb-onepage/ {
         include proxy_params;
